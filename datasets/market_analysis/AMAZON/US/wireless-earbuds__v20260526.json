@@ -1,0 +1,28 @@
+{
+  "platform": "AMAZON",
+  "market": "US",
+  "keyword_slug": "wireless-earbuds",
+  "observed_at": "2026-05-26",
+  "top_keywords": [
+    {
+      "keyword": "wireless earbuds",
+      "search_volume_index": 88
+    },
+    {
+      "keyword": "bluetooth earbuds",
+      "search_volume_index": 74
+    }
+  ],
+  "price_band": {
+    "p50_usd": 29.99,
+    "p90_usd": 79.99
+  },
+  "competition": {
+    "active_listings_estimate": 12000,
+    "top_brand_share_estimate": 0.35
+  },
+  "notes": [
+    "本数据为演示用静态样例，用于打通 MARKET_ANALYSIS 端到端链路。"
+  ]
+}
+

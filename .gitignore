@@ -1,0 +1,92 @@
+# ====== Java ======
+**/target/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+*.ctxt
+.mtj.tmp/
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+replay_pid*
+
+# Maven
+.m2/
+.flattened-pom.xml
+.project
+.settings/
+.classpath
+
+# ====== Python ======
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+. ruff_cache/
+.ruff_cache/
+*.pyc
+
+# ====== Node / Vue ======
+node_modules/
+dist/
+dist-ssr/
+*.local
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# ====== IDE ======
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.vs/
+*.swp
+*.swo
+*~
+.DS_Store
+*.DS_Store
+
+# ====== Env & Secrets ======
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+!deploy/.env.example
+
+# ====== Claude ======
+.claude/
+.traces/
+
+# ====== Test Output ======
+test-results/
+coverage/
+*.coverage
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+
+# ====== OS ======
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ====== Misc ======
+*.bak
+*.tmp
+*.temp

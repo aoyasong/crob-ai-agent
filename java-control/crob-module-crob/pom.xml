@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.crob.agent</groupId>
+        <artifactId>crob</artifactId>
+        <version>${revision}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>jar</packaging>
+    <artifactId>crob-module-crob</artifactId>
+
+    <name>${project.artifactId}</name>
+    <description>选品 Agent 任务平台模块</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.crob.agent</groupId>
+            <artifactId>crob-module-system</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.crob.agent</groupId>
+            <artifactId>crob-module-infra</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.crob.agent</groupId>
+            <artifactId>crob-spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.crob.agent</groupId>
+            <artifactId>crob-spring-boot-starter-mybatis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.crob.agent</groupId>
+            <artifactId>crob-spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Markdown 渲染 -->
+        <dependency>
+            <groupId>org.commonmark</groupId>
+            <artifactId>commonmark</artifactId>
+            <version>0.21.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.diffplug.spotless</groupId>
+                <artifactId>spotless-maven-plugin</artifactId>
+                <version>2.44.5</version>
+                <configuration>
+                    <java>
+                        <googleJavaFormat>
+                            <version>1.25.2</version>
+                            <style>AOSP</style>
+                        </googleJavaFormat>
+                        <removeUnusedImports />
+                    </java>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+

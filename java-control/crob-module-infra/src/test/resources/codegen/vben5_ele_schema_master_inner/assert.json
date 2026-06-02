@@ -1,0 +1,76 @@
+﻿[ {
+  "contentPath" : "java/InfraStudentPageReqVO",
+  "filePath" : "Crob-module-infra/src/main/java/cn/iocoder/Crob/module/infra/controller/admin/demo/vo/InfraStudentPageReqVO.java"
+}, {
+  "contentPath" : "java/InfraStudentRespVO",
+  "filePath" : "Crob-module-infra/src/main/java/cn/iocoder/Crob/module/infra/controller/admin/demo/vo/InfraStudentRespVO.java"
+}, {
+  "contentPath" : "java/InfraStudentSaveReqVO",
+  "filePath" : "Crob-module-infra/src/main/java/cn/iocoder/Crob/module/infra/controller/admin/demo/vo/InfraStudentSaveReqVO.java"
+}, {
+  "contentPath" : "java/InfraStudentController",
+  "filePath" : "Crob-module-infra/src/main/java/cn/iocoder/Crob/module/infra/controller/admin/demo/InfraStudentController.java"
+}, {
+  "contentPath" : "java/InfraStudentDO",
+  "filePath" : "Crob-module-infra/src/main/java/cn/iocoder/Crob/module/infra/dal/dataobject/demo/InfraStudentDO.java"
+}, {
+  "contentPath" : "java/InfraStudentContactDO",
+  "filePath" : "Crob-module-infra/src/main/java/cn/iocoder/Crob/module/infra/dal/dataobject/demo/InfraStudentContactDO.java"
+}, {
+  "contentPath" : "java/InfraStudentTeacherDO",
+  "filePath" : "Crob-module-infra/src/main/java/cn/iocoder/Crob/module/infra/dal/dataobject/demo/InfraStudentTeacherDO.java"
+}, {
+  "contentPath" : "java/InfraStudentMapper",
+  "filePath" : "Crob-module-infra/src/main/java/cn/iocoder/Crob/module/infra/dal/mysql/demo/InfraStudentMapper.java"
+}, {
+  "contentPath" : "java/InfraStudentContactMapper",
+  "filePath" : "Crob-module-infra/src/main/java/cn/iocoder/Crob/module/infra/dal/mysql/demo/InfraStudentContactMapper.java"
+}, {
+  "contentPath" : "java/InfraStudentTeacherMapper",
+  "filePath" : "Crob-module-infra/src/main/java/cn/iocoder/Crob/module/infra/dal/mysql/demo/InfraStudentTeacherMapper.java"
+}, {
+  "contentPath" : "xml/InfraStudentMapper",
+  "filePath" : "Crob-module-infra/src/main/resources/mapper/demo/InfraStudentMapper.xml"
+}, {
+  "contentPath" : "java/InfraStudentServiceImpl",
+  "filePath" : "Crob-module-infra/src/main/java/cn/iocoder/Crob/module/infra/service/demo/InfraStudentServiceImpl.java"
+}, {
+  "contentPath" : "java/InfraStudentService",
+  "filePath" : "Crob-module-infra/src/main/java/cn/iocoder/Crob/module/infra/service/demo/InfraStudentService.java"
+}, {
+  "contentPath" : "java/InfraStudentServiceImplTest",
+  "filePath" : "Crob-module-infra/src/test/java/cn/iocoder/Crob/module/infra/service/demo/InfraStudentServiceImplTest.java"
+}, {
+  "contentPath" : "java/ErrorCodeConstants_手动操作",
+  "filePath" : "Crob-module-infra/src/main/java/cn/iocoder/Crob/module/infra/enums/ErrorCodeConstants_手动操作.java"
+}, {
+  "contentPath" : "sql/sql",
+  "filePath" : "sql/sql.sql"
+}, {
+  "contentPath" : "sql/h2",
+  "filePath" : "sql/h2.sql"
+}, {
+  "contentPath" : "ts/data",
+  "filePath" : "Crob-ui-admin-vben/src/views/infra/demo/data.ts"
+}, {
+  "contentPath" : "vue/index",
+  "filePath" : "Crob-ui-admin-vben/src/views/infra/demo/index.vue"
+}, {
+  "contentPath" : "vue/form",
+  "filePath" : "Crob-ui-admin-vben/src/views/infra/demo/modules/form.vue"
+}, {
+  "contentPath" : "ts/index",
+  "filePath" : "Crob-ui-admin-vben/src/api/infra/demo/index.ts"
+}, {
+  "contentPath" : "vue/student-contact-form",
+  "filePath" : "Crob-ui-admin-vben/src/views/infra/demo/modules/student-contact-form.vue"
+}, {
+  "contentPath" : "vue/student-teacher-form",
+  "filePath" : "Crob-ui-admin-vben/src/views/infra/demo/modules/student-teacher-form.vue"
+}, {
+  "contentPath" : "vue/student-contact-list",
+  "filePath" : "Crob-ui-admin-vben/src/views/infra/demo/modules/student-contact-list.vue"
+}, {
+  "contentPath" : "vue/student-teacher-list",
+  "filePath" : "Crob-ui-admin-vben/src/views/infra/demo/modules/student-teacher-list.vue"
+} ]

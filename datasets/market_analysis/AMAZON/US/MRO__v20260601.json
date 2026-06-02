@@ -1,0 +1,38 @@
+{
+  "observed_at": "2026-06-01",
+  "category": "MRO (Maintenance, Repair and Operations)",
+  "platform": "Amazon",
+  "market": "US",
+  "summary": {
+    "market_size_usd": "450B globally, ~120B US market",
+    "annual_growth_rate": "3.5%",
+    "top_categories": ["Industrial Supplies", "Electrical", "Plumbing", "HVAC", "Safety Equipment"],
+    "ecommerce_penetration": "12% growing to 25% by 2030"
+  },
+  "trends": [
+    {"name": "Digital Procurement", "impact": "High", "description": "B2B e-commerce platforms gaining share"},
+    {"name": "Sustainability", "impact": "Medium", "description": "Green MRO products demand rising"},
+    {"name": "Same-day Delivery", "impact": "High", "description": "Amazon Business Prime driving expectations"},
+    {"name": "AI-powered Inventory", "impact": "Medium", "description": "Predictive maintenance reducing downtime"}
+  ],
+  "competitors": [
+    {"name": "Amazon Business", "market_share": "18%", "strength": "Logistics + selection"},
+    {"name": "Grainger", "market_share": "12%", "strength": "Enterprise contracts"},
+    {"name": "Fastenal", "market_share": "8%", "strength": "Vending + on-site"},
+    {"name": "MSC Industrial", "market_share": "6%", "strength": "Metalworking specialty"},
+    {"name": "McMaster-Carr", "market_share": "5%", "strength": "UX + fast shipping"}
+  ],
+  "risks": [
+    "Supply chain disruptions",
+    "Tariff changes on industrial goods",
+    "Amazon dominating B2B marketplace",
+    "Price transparency compressing margins"
+  ],
+  "recommendations": [
+    "Focus on niche MRO subcategories with less competition",
+    "Build brand through Amazon Business certification",
+    "Offer bundled SKUs (kits) for higher AOV",
+    "Leverage FBA for fast delivery advantage",
+    "Monitor Grainger and Fastenal pricing weekly"
+  ]
+}
