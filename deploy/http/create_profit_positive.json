@@ -1,0 +1,10 @@
+{
+  "scenario": "PROFIT_MODEL",
+  "inputs": {
+    "platform": "AMAZON",
+    "market": "US",
+    "shipping_mode": "FBA",
+    "cost_fen": 10000,
+    "price_fen": 19999
+  }
+}

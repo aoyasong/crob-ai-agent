@@ -1,0 +1,105 @@
+name: crob-agent
+networks:
+  infrastructure_env_network:
+    external: true
+services:
+  minio:
+    image: minio/minio:RELEASE.2025-01-20T14-49-07Z
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin}
+    ports:
+      - "${MINIO_PORT:-9000}:9000"
+      - "${MINIO_CONSOLE_PORT:-9001}:9001"
+    volumes:
+      - minio_data:/data
+    networks:
+      infrastructure_env_network:
+        aliases:
+          - minio
+
+  minio_init:
+    image: minio/mc:RELEASE.2024-10-29T15-34-59Z
+    depends_on:
+      - minio
+    entrypoint: >
+      /bin/sh -c "
+      mc alias set local http://minio:9000 $$MINIO_ROOT_USER $$MINIO_ROOT_PASSWORD &&
+      mc mb -p local/evidence || true &&
+      mc mb -p local/audit-pack || true
+      "
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin}
+    networks:
+      infrastructure_env_network:
+        aliases:
+          - minio_init
+
+  crob-java-control:
+    build:
+      context: ../java-control
+      dockerfile: crob-server/Dockerfile
+    depends_on:
+      minio_init:
+        condition: service_started
+    restart: unless-stopped
+    environment:
+      SPRING_PROFILES_ACTIVE: local
+      CROB_DB_URL: jdbc:postgresql://postgres:5432/${CROB_DB_NAME:-crob_agent}
+      CROB_DB_USERNAME: ${CROB_DB_USERNAME:-postgres}
+      CROB_DB_PASSWORD: ${CROB_DB_PASSWORD:-postgres}
+      CROB_REDIS_HOST: redis
+      CROB_REDIS_PORT: 6379
+      CROB_REDIS_DB: ${CROB_REDIS_DB:-1}
+      CROB_REDIS_PW: ${CROB_REDIS_PW:?missing}
+      INTERNAL_HMAC_SECRET: ${INTERNAL_HMAC_SECRET:?missing}
+      PYTHON_EXECUTOR_BASE_URL: http://crob-python-executor:8000
+      MINIO_ENDPOINT: http://minio:9000
+      MINIO_ACCESS_KEY: ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_SECRET_KEY: ${MINIO_ROOT_PASSWORD:-minioadmin}
+      CROB_TENANT_ENABLE: "false"
+      CROB_API_ENCRYPT_ENABLE: "false"
+    ports:
+      - "${JAVA_PORT:-48080}:48080"
+    networks:
+      infrastructure_env_network:
+        aliases:
+          - crob-java-control
+
+  crob-python-executor:
+    build:
+      context: ../python-executor
+    restart: unless-stopped
+    environment:
+      EXECUTOR_DB_URL: postgresql://${CROB_DB_USERNAME:-postgres}:${CROB_DB_PASSWORD:-postgres}@postgres:5432/${CROB_DB_NAME:-crob_agent}
+      EXECUTOR_REDIS_URL: redis://:${CROB_REDIS_PW:?missing}@redis:6379/${CROB_REDIS_DB:-1}
+      JAVA_INTERNAL_BASE_URL: http://crob-java-control:48080
+      INTERNAL_HMAC_SECRET: ${INTERNAL_HMAC_SECRET:?missing}
+      SILICONFLOW_API_KEY: ${SILICONFLOW_API_KEY:?missing}
+      DATASETS_DIR: /datasets
+    volumes:
+      - ../datasets:/datasets:ro
+    ports:
+      - "${PYTHON_PORT:-48081}:8000"
+    networks:
+      infrastructure_env_network:
+        aliases:
+          - crob-python-executor
+
+  crob-web-admin:
+    build:
+      context: ../web-admin/crob-admin-web
+    depends_on:
+      - crob-java-control
+    restart: unless-stopped
+    ports:
+      - "${WEB_ADMIN_PORT:-48090}:80"
+    networks:
+      infrastructure_env_network:
+        aliases:
+          - crob-web-admin
+          
+volumes:
+  minio_data:

@@ -1,0 +1,8 @@
+{
+  "scenario": "MARKET_ANALYSIS",
+  "inputs": {
+    "category_or_keyword": "this-slug-should-not-exist",
+    "platform": "AMAZON",
+    "market": "US"
+  }
+}
